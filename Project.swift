@@ -7,6 +7,10 @@ let organizationName = "AI Shopper"
 let project = Project(
     name: appName,
     organizationName: organizationName,
+    packages: [
+        .package(url: "https://github.com/groue/GRDB.swift", .upToNextMajor(from: "6.0.0")),
+        .package(url: "https://github.com/kean/Pulse", .upToNextMajor(from: "4.0.0"))
+    ],
     targets: [
         .target(
             name: appName,
@@ -30,21 +34,21 @@ let project = Project(
                 .external(name: "Pulse")
             ]
         ),
-        .unitTests(
+        .target(
             name: "AppTests",
+            destinations: .iOS,
+            product: .unitTests,
             bundleId: "\(bundleId).tests",
             sources: ["App/Tests/AppTests/**"],
             dependencies: [.target(name: appName)]
         ),
-        .uiTests(
+        .target(
             name: "UITests",
+            destinations: .iOS,
+            product: .uiTests,
             bundleId: "\(bundleId).uitests",
             sources: ["App/Tests/UITests/**"],
             dependencies: [.target(name: appName)]
         )
-    ],
-    packages: [
-        .package(url: "https://github.com/groue/GRDB.swift", .upToNextMajor(from: "6.0.0")),
-        .package(url: "https://github.com/kean/Pulse", .upToNextMajor(from: "4.0.0"))
     ]
 )
