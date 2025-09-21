@@ -1,0 +1,11 @@
+.DS_Store
+/.build
+/.swiftpm
+/Tuist/Dependencies
+*.xcworkspace
+DerivedData
+build/
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+AuthKey.p8

@@ -1,0 +1,44 @@
+default_platform(:ios)
+
+def asc_key
+  app_store_connect_api_key(
+    key_id: ENV["ASC_KEY_ID"],
+    issuer_id: ENV["ASC_ISSUER_ID"],
+    key_content: ENV["ASC_KEY_P8"],
+    is_key_content_base64: false
+  )
+end
+
+def scheme_release
+  "AIShopperBrowser-Release"
+end
+
+def scheme_debug
+  "AIShopperBrowser-Debug"
+end
+
+platform :ios do
+  desc "Run unit tests"
+  lane :test do
+    scan(
+      scheme: scheme_debug,
+      clean: true,
+      devices: ["iPhone 16"]
+    )
+  end
+
+  desc "Build and upload to TestFlight"
+  lane :beta do
+    match(type: "appstore")
+    build_app(
+      scheme: scheme_release,
+      export_method: "app-store",
+      output_directory: "build"
+    )
+    upload_to_app_store(
+      api_key: asc_key,
+      skip_screenshots: true,
+      skip_metadata: true
+    )
+  end
+end

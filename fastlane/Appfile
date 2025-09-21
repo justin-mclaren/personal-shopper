@@ -1,0 +1,3 @@
+app_identifier("com.aishopper.browser")
+apple_id("ios-dev@example.com")
+team_id("ABCDE12345")
