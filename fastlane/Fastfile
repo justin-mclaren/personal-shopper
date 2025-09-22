@@ -20,11 +20,16 @@ end
 platform :ios do
   desc "Run unit tests"
   lane :test do
-    scan(
+    scan_options = {
       scheme: scheme_debug,
-      clean: true,
-      devices: ["iPhone 16"]
-    )
+      clean: true
+    }
+
+    if (devices = ENV["SCAN_DEVICES"]) && !devices.strip.empty?
+      scan_options[:devices] = devices.split(",").map { |device| device.strip }
+    end
+
+    scan(scan_options)
   end
 
   desc "Build and upload to TestFlight"
