@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="backgroundGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="50%" stop-color="#312e81" />
+      <stop offset="100%" stop-color="#6d28d9" />
+    </linearGradient>
+    <linearGradient id="bagGradient" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f8fafc" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#e2e8f0" stop-opacity="0.9" />
+    </linearGradient>
+    <filter id="shadow" x="-15%" y="-10%" width="130%" height="130%" filterUnits="objectBoundingBox">
+      <feDropShadow dx="0" dy="28" stdDeviation="32" flood-color="#312e81" flood-opacity="0.3" />
+    </filter>
+  </defs>
+  <rect width="1024" height="1024" rx="208" fill="url(#backgroundGradient)" />
+  <g filter="url(#shadow)">
+    <path d="M320 392h384c33.2 0 60 25.9 62.7 59l21.3 256c3.1 36.8-25 68-61.9 68H298c-36.9 0-65-31.2-61.9-68l21.3-256c2.7-33.1 29.5-59 62.7-59z" fill="url(#bagGradient)" />
+    <path d="M384 392v-24c0-76.8 62.4-139.2 139.2-139.2h0c76.8 0 139.2 62.4 139.2 139.2v24h-59.2v-24c0-44.1-35.9-80-80-80h0c-44.1 0-80 35.9-80 80v24z" fill="#6366f1" />
+    <path d="M368 488h288v176a48 48 0 0 1-48 48H416a48 48 0 0 1-48-48V488z" fill="#312e81" />
+    <path d="M472 568h80a32 32 0 0 1 0 64h-80a32 32 0 0 1 0-64z" fill="#f8fafc" />
+    <path d="M400 552a24 24 0 1 1 0 48a24 24 0 0 1 0-48zm224 0a24 24 0 1 1 0 48a24 24 0 0 1 0-48z" fill="#6366f1" />
+  </g>
+  <circle cx="512" cy="768" r="140" fill="rgba(255,255,255,0.08)" />
+  <path d="M512 700l48 76h-32v56h-32v-56h-32z" fill="#f8fafc" opacity="0.9" />
+</svg>
