@@ -26,8 +26,8 @@ let project = Project(
                 .pre(script: "swift Scripts/embed_user_scripts.swift", name: "EmbedUserScripts")
             ],
             dependencies: [
-                .external(name: "GRDB"),
-                .external(name: "Pulse")
+                .package(product: "GRDB"),
+                .package(product: "Pulse")
             ]
         ),
         .target(
@@ -46,5 +46,9 @@ let project = Project(
             sources: ["App/Tests/UITests/**"],
             dependencies: [.target(name: appName)]
         )
+    ],
+    packages: [
+        .remote(url: "https://github.com/groue/GRDB.swift", requirement: .upToNextMajor(from: "6.0.0")),
+        .remote(url: "https://github.com/kean/Pulse", requirement: .upToNextMajor(from: "4.0.0"))
     ]
 )

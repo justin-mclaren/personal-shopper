@@ -17,9 +17,6 @@ jobs:
           brew tap tuist/tuist
           brew install --formula tuist
 
-      - name: Resolve Tuist dependencies
-        run: tuist install
-
       - name: Generate project
         run: tuist generate
 
