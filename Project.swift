@@ -7,6 +7,10 @@ let organizationName = "AI Shopper"
 let project = Project(
     name: appName,
     organizationName: organizationName,
+    packages: [
+        .remote(url: "https://github.com/groue/GRDB.swift", requirement: .upToNextMajor(from: "6.0.0")),
+        .remote(url: "https://github.com/kean/Pulse", requirement: .upToNextMajor(from: "4.0.0"))
+    ],
     targets: [
         .target(
             name: appName,
@@ -46,9 +50,5 @@ let project = Project(
             sources: ["App/Tests/UITests/**"],
             dependencies: [.target(name: appName)]
         )
-    ],
-    packages: [
-        .remote(url: "https://github.com/groue/GRDB.swift", requirement: .upToNextMajor(from: "6.0.0")),
-        .remote(url: "https://github.com/kean/Pulse", requirement: .upToNextMajor(from: "4.0.0"))
     ]
 )
