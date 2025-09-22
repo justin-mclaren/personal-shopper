@@ -55,7 +55,7 @@ let project = Project(
         Scheme.scheme(
             name: "\(appName)-Debug",
             buildAction: .buildAction(targets: [
-                appName,
+                .target(appName),
                 "AppTests",
                 "UITests"
             ]),
@@ -65,28 +65,28 @@ let project = Project(
             ]),
             runAction: .runAction(
                 configuration: .debug,
-                executable: appName
+                executable: .target(appName)
             ),
             archiveAction: .archiveAction(configuration: .release),
             profileAction: .profileAction(
                 configuration: .release,
-                executable: appName
+                executable: .target(appName)
             ),
             analyzeAction: .analyzeAction(configuration: .debug)
         ),
         Scheme.scheme(
             name: "\(appName)-Release",
             buildAction: .buildAction(targets: [
-                appName
+                .target(appName)
             ]),
             runAction: .runAction(
                 configuration: .release,
-                executable: appName
+                executable: .target(appName)
             ),
             archiveAction: .archiveAction(configuration: .release),
             profileAction: .profileAction(
                 configuration: .release,
-                executable: appName
+                executable: .target(appName)
             ),
             analyzeAction: .analyzeAction(configuration: .release)
         )
