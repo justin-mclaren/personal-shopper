@@ -71,7 +71,7 @@ ai-shopper-browser/
 ## Getting started
 
 1. [Install Tuist](https://tuist.io) via Homebrew or the install script.
-2. Run `tuist fetch && tuist generate` from the repository root.
+2. Run `tuist install && tuist generate` from the repository root.
 3. Open the generated Xcode project and run the **AIShopperBrowser** scheme.
 
 ## Continuous Integration

@@ -7,10 +7,6 @@ let organizationName = "AI Shopper"
 let project = Project(
     name: appName,
     organizationName: organizationName,
-    packages: [
-        .package(url: "https://github.com/groue/GRDB.swift", .upToNextMajor(from: "6.0.0")),
-        .package(url: "https://github.com/kean/Pulse", .upToNextMajor(from: "4.0.0"))
-    ],
     targets: [
         .target(
             name: appName,
