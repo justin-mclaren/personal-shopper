@@ -10,7 +10,8 @@ let project = Project(
     packages: [
         .remote(url: "https://github.com/groue/GRDB.swift", requirement: .upToNextMajor(from: "6.0.0")),
         .remote(url: "https://github.com/kean/Pulse", requirement: .upToNextMajor(from: "4.0.0")),
-        .remote(url: "https://github.com/kean/PulseLogHandler", requirement: .upToNextMajor(from: "5.0.0"))
+        .remote(url: "https://github.com/kean/PulseLogHandler", requirement: .upToNextMajor(from: "5.0.0")),
+        .remote(url: "https://github.com/apple/swift-log.git", requirement: .upToNextMajor(from: "1.5.0"))
     ],
     targets: [
         .target(
@@ -33,7 +34,8 @@ let project = Project(
             dependencies: [
                 .package(product: "GRDB"),
                 .package(product: "Pulse"),
-                .package(product: "PulseLogHandler")
+                .package(product: "PulseLogHandler"),
+                .package(product: "Logging")
             ]
         ),
         .target(

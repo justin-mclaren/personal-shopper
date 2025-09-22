@@ -20,6 +20,9 @@ jobs:
       - name: Generate project
         run: tuist generate
 
+      - name: Swift package tests
+        run: swift test
+
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.3'

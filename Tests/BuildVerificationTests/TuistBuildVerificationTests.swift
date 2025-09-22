@@ -22,6 +22,7 @@ final class TuistBuildVerificationTests: XCTestCase {
             try runOrFail("tuist", arguments: ["install"], at: root)
         }
 
+        try runOrFail("tuist", arguments: ["fetch"], at: root)
         try runOrFail("tuist", arguments: ["generate"], at: root)
 
         let workspacePath = root.appendingPathComponent("AIShopperBrowser.xcworkspace").path
