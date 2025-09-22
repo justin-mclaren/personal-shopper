@@ -74,6 +74,11 @@ ai-shopper-browser/
 2. Run `tuist fetch && tuist generate` from the repository root.
 3. Open the generated Xcode project and run the **AIShopperBrowser** scheme.
 
+## Local testing
+
+- Run `swift test` to execute the Swift Package tests.
+- On macOS hosts, `swift test` also runs a build verification that executes `tuist generate` and `tuist build --scheme AIShopperBrowser-Debug`. The command will fail if the Tuist manifests are invalid or if Xcode cannot build the app target, surfacing build issues alongside the unit tests.
+
 ## Continuous Integration
 
 - Pull requests trigger the `iOS CI` workflow which installs Tuist, generates the project, caches dependencies, and runs `fastlane ios test`.

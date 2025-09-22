@@ -19,6 +19,10 @@ let package = Package(
             name: "AdapterBundleToolTests",
             dependencies: ["AdapterBundleTool"],
             path: "Tools/AdapterBundleTool/Tests"
+        ),
+        .testTarget(
+            name: "BuildVerificationTests",
+            path: "Tests/BuildVerificationTests"
         )
     ]
 )
